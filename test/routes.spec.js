@@ -3,7 +3,7 @@ const should = require('should')
 
 let request = supertest('http://localhost:8080')
 
-const BASE_URI = '/repos/yonivy/WBSS/files'
+const BASE_URI = '/repos/yonivy/repomate/files'
 
 describe('Files', () => {
   describe('#exists', () => {
@@ -12,8 +12,8 @@ describe('Files', () => {
         .expect(200, done)
     })
 
-    it('should not find a file that exists in given a relative path', (done) => {
-      request.get(`${BASE_URI}/exists/webapp.py`)
+    it('should not find a file that exists given a non full path', (done) => {
+      request.get(`${BASE_URI}/exists/inside-level-1.md`)
         .expect(404, done)
     })
 
@@ -26,7 +26,7 @@ describe('Files', () => {
   describe('#findByName', () => {
     it('should return a list of all file paths with a given file name', (done) => {
       request.get(`${BASE_URI}/name/multiple-occurence.md`)
-        .expect(200, done)
+        .expect(200, console.log, done)
     })
 
     it('should return an ampty list when no path was found')

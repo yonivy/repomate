@@ -45,7 +45,7 @@ module.exports = function routes(app) {
   app.get('/repos/:owner/:repo/files/name/:name', (req, res) => {
     findFilesByName(req.params.owner, req.params.repo, req.params.name)
       .then(paths => {
-        res.status(200).json(paths)
+        res.status(200).json({paths: paths})
       })
       .catch(err => {
         res.status(err.status || 500).json(err)
@@ -72,7 +72,7 @@ module.exports = function routes(app) {
   app.get('/repos/:owner/:repo/files/ext/:ext', (req, res) => {
    findFilesByExtension(req.params.owner, req.params.repo, req.params.ext)
       .then(paths => {
-        res.status(200).json(paths)
+        res.status(200).json({paths: paths})
       })
       .catch(err => {
         res.status(err.status || 500).json(err)
