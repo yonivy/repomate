@@ -7,7 +7,7 @@ To see a documentation for all endpoints check the [docs](/docs)
 
 # Installation
 
-The ususal `npm install`
+The usual `npm install`
 
 # Usage
 
