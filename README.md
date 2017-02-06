@@ -16,3 +16,9 @@ To start the server run `npm start`
 # Tests
 
 To run all tests run `npm test`
+
+# Docs
+
+To generate the docs run `npm run docs`
+
+To view the docs simply open `docs/index.html` in your browser.
