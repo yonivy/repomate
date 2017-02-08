@@ -4,6 +4,10 @@ const github = require('./github')
 
 
 module.exports = function routes(app) { 
+
+  app.get('/', (req, res) => {
+    res.status(200).json({healthcheck: true})
+  })
   /**
    * @api {get} /repos/:owner/:repo/files/exists/:filepath exists
    * @apiName exists
